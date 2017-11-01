@@ -22,6 +22,8 @@ const middlewares = applyMiddleware(thunk.withExtraArgument(apiClient));
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, initialState, composeEnhancers(middlewares));
 
+window.ax = apiClient; // TODO delete line
+
 ReactDOM.hydrate(
   <Provider store={store}>
     <App />
